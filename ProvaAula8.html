@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Objeto Literal - Aluno</title>
+</head>
+<body>
+
+<h2>Objeto Literal em JavaScript</h2>
+<p>Abra o console (F12) para ver os resultados</p>
+
+<script>
+  // ===============================
+  // OBJETO LITERAL
+  // ===============================
+  // Objeto literal é criado usando {}
+  // Ele agrupa propriedades e métodos relacionados
+
+  const aluno = {
+    // Propriedade do tipo string
+    nome: "Lucas",
+
+    // Propriedade do tipo array
+    notas: [7, 8, 9],
+
+    // Método do objeto
+    // Calcula e retorna a média das notas
+    calcularMedia() {
+      // Soma todas as notas usando reduce()
+      const soma = this.notas.reduce((total, nota) => total + nota, 0);
+
+      // Retorna a média
+      return soma / this.notas.length;
+    }
+  };
+
+  // ===============================
+  // DESESTRUTURAÇÃO
+  // ===============================
+  // A desestruturação permite extrair propriedades
+  // do objeto de forma simples
+
+  const { nome } = aluno;
+
+  console.log("Nome do aluno:", nome);
+
+  // ===============================
+  // SPREAD OPERATOR
+  // ===============================
+  // O spread operator (...) copia os valores do array
+  // e permite adicionar novos elementos
+
+  const novasNotas = [...aluno.notas, 10];
+
+  // Atualiza o array de notas do aluno
+  aluno.notas = novasNotas;
+
+  console.log("Notas atualizadas:", aluno.notas);
+
+  // ===============================
+  // CHAMANDO O MÉTODO
+  // ===============================
+  // Executa o método calcularMedia()
+  // e exibe o resultado no console
+
+  console.log("Média do aluno:", aluno.calcularMedia());
+</script>
+
+</body>
+</html>
